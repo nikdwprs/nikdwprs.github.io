@@ -27,7 +27,7 @@ const { iframeResizer } = require('iframe-resizer');
 		window.addEventListener('resize', (event) => iframeMessager.send('RESIZE', { width: innerWidth }) );
 	});
 	iframeMessager.on('STRAHOVKI_REDIRECT', (payload) => { 
-		console.log(payload.url);
+		console.log(payload);
 		// window.location.replace(payload.url)
 	});
 
