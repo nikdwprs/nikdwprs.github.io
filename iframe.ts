@@ -26,9 +26,8 @@ const { iframeResizer } = require('iframe-resizer');
 		});
 		window.addEventListener('resize', (event) => iframeMessager.send('RESIZE', { width: innerWidth }) );
 	});
-	iframeMessager.on('STRAHOVKI_REDIRECT', (payload) => { 
-		console.log(payload);
-		// window.location.replace(payload.url)
+	iframeMessager.on('STRAHOVKI_REDIRECT', (event) => { 
+		window.location.replace(event.payload.url);
 	});
 
 }
