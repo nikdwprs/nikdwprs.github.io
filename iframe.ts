@@ -1,5 +1,6 @@
 
 import { IframeMessager } from './messager';
+import 'babel-polyfill';
 const { iframeResizer } = require('iframe-resizer');
 
 
