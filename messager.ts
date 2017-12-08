@@ -50,7 +50,6 @@ export class IframeMessager {
 	 */
 	private listen = (event) => {
 		if (typeof event.data == 'object') {
-			console.log(this.listeners)
 			const listener = this.listeners.find(listener => listener.type == event.data.type);
 			if (listener) listener.handle(event.data);
 		}

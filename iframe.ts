@@ -18,16 +18,19 @@ const { iframeResizer } = require('iframe-resizer');
 	iframeMessager.on('STRAHOVKI_24_LOADED', (payload) => {
 		iframeResizer({
 			sizeHeight: true,
-			sizeWidth: true,
+			sizeWidth: false,
 			warningTimeout: 15000
 		}, strahovki24Iframe);
-		iframeMessager.send('RESIZE', { width: innerWidth });
-		iframeMessager.send('INIT', {
+		iframeMessager.send('STRAHOVKI_24_RESIZE', { width: innerWidth });
+		iframeMessager.send('STRAHOVKI_24_INIT', {
 			url: window.location.href
 		});
-		window.addEventListener('resize', (event) => iframeMessager.send('RESIZE', { width: innerWidth }) );
+		window.addEventListener('resize', (event) => iframeMessager.send('STRAHOVKI_24_RESIZE', { width: innerWidth }) );
 	});
-	iframeMessager.on('STRAHOVKI_REDIRECT', (event) => { 
+	iframeMessager.on('STRAHOVKI_24_REDIRECT', (event) => { 
+		window.location.replace(event.payload.url);
+	});
+	iframeMessager.on('STRAHOVKI_24_LOCAL_REDIRECT', (event) => { 
 		window.location.replace(event.payload.url);
 	});
 
