@@ -30,8 +30,7 @@ const { iframeResizer } = require('iframe-resizer');
 	iframeMessager.on('STRAHOVKI_24_REDIRECT', (event) => { 
 		window.location.replace(event.payload.url);
 	});
-	iframeMessager.on('STRAHOVKI_24_LOCAL_REDIRECT', (event) => { 
+	iframeMessager.on('STRAHOVKI_24_REDIRECT', (event) => {
 		window.location.replace(event.payload.url);
 	});
-
 }
