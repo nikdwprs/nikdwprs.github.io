@@ -12,7 +12,7 @@ const { iframeResizer } = require('iframe-resizer');
 	strahovki24Iframe.src = url;
 	strahovki24Iframe.scrolling = 'no';
 	strahovki24Iframe.name = 'strahovki-24-iframe';
-
+	
 	container.appendChild(strahovki24Iframe);
 
 	iframeMessager.on('STRAHOVKI_24_LOADED', (payload) => {
@@ -30,7 +30,7 @@ const { iframeResizer } = require('iframe-resizer');
 	iframeMessager.on('STRAHOVKI_24_REDIRECT', (event) => { 
 		window.location.replace(event.payload.url);
 	});
-	iframeMessager.on('STRAHOVKI_24_REDIRECT', (event) => {
+	iframeMessager.on('STRAHOVKI_24_LOCAL_REDIRECT', (event) => {
 		window.location.replace(event.payload.url);
 	});
 }
