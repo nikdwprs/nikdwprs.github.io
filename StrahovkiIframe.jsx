@@ -13,7 +13,7 @@ export class StrahovkiIframe extends React.Component {
 	render() {
 
 		return (
-			<iframe src='https://strahovki24.dwpr.ru/iframe-integration/travel/insurance'  frameborder='0' ></iframe>
+			<iframe src='https://strahovki24-dev.dwpr.ru/iframe-integration/travel/insurance'  frameborder='0' ></iframe>
 		);
 
 	}
